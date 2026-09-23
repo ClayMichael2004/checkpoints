@@ -10,19 +10,20 @@ func Chunk(slice []int, size int) {
 		z01.PrintRune('\n')
 	}
 	for i := 0; i < len(slice); i += size { //loops through the slice jumping forward based on the size
-		end := i + size       //set the end of the currect chunk
-		if end > len(slice) { //if current end goes past the slice end return it forcefully at len(slice)
-			end = len(slice)
-		}
+		
 		z01.PrintRune('[')
-		for j := i; j < end; j++ { //loops through the elements of the chunk only from i to the end-1
-			putnbr(slice[j])
-			if j < end-1 {
+		first:=true
+		for j := i; j < i+size && j< len(slice); j++ { //loops through the elements of the chunk only from i to the end-1
+			if !first {
 				z01.PrintRune(' ')
 			}
+			putnbr(slice[j])
+			first=false
 		}
 		z01.PrintRune(']')
+		z01.PrintRune(' ')
 	}
+	z01.PrintRune('\n')
 }
 
 func putnbr(n int) {
