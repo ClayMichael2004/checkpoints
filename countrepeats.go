@@ -1,7 +1,6 @@
 package main
 
 import (
-	"strconv"
 
 	"fmt"
 )
@@ -10,20 +9,18 @@ func CountRepeats(s string) string {
 	if s == "" {
 		return ""
 	}
-	var result string
-	var counter = 1
+	result:=""
+	counter := 1
 
-	for i := 0; i < len(s); i++ {
-		if i+1 < len(s) && string(s[i]) == string(s[i+1]) {
+	for i := 0; i < len(s)-1; i++ {
+		if s[i]==s[i+1]{
 			counter++
-		} else {
-			result = result + string(s[i])
-			if counter > 1 {
-				result = result + strconv.Itoa(counter)
-			}
-			counter = 1
+		}else{
+			result+=string(s[i])+ string(rune(counter+'0'))
+			counter=1
 		}
 	}
+	result+=string(s[len(s)-1])+string(rune(counter+'0'))
 	return result
 }
 
