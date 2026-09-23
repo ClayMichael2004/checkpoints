@@ -10,15 +10,15 @@ func Chunk(slice []int, size int) {
 		z01.PrintRune('\n')
 	}
 	for i := 0; i < len(slice); i += size { //loops through the slice jumping forward based on the size
-		
+
 		z01.PrintRune('[')
-		first:=true
-		for j := i; j < i+size && j< len(slice); j++ { //loops through the elements of the chunk only from i to the end-1
+		first := true
+		for j := i; j < i+size && j < len(slice); j++ { //loops through the elements of the chunk only from i to the end-1
 			if !first {
 				z01.PrintRune(' ')
 			}
 			putnbr(slice[j])
-			first=false
+			first = false
 		}
 		z01.PrintRune(']')
 		z01.PrintRune(' ')

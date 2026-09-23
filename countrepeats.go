@@ -1,7 +1,6 @@
 package main
 
 import (
-
 	"fmt"
 )
 
@@ -9,18 +8,18 @@ func CountRepeats(s string) string {
 	if s == "" {
 		return ""
 	}
-	result:=""
+	result := ""
 	counter := 1
 
 	for i := 0; i < len(s)-1; i++ {
-		if s[i]==s[i+1]{
+		if s[i] == s[i+1] {
 			counter++
-		}else{
-			result+=string(s[i])+ string(rune(counter+'0'))
-			counter=1
+		} else {
+			result += string(s[i]) + string(rune(counter+'0'))
+			counter = 1
 		}
 	}
-	result+=string(s[len(s)-1])+string(rune(counter+'0'))
+	result += string(s[len(s)-1]) + string(rune(counter+'0'))
 	return result
 }
 

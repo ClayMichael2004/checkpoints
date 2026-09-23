@@ -21,10 +21,10 @@ func CamelToSnakeCase(s string) string {
 		if i > 0 && (v >= 'A' && v <= 'Z') && (s[i-1] >= 'A' && s[i-1] <= 'Z') {
 			return s
 		}
-		if i>0 && v >= 'A' && v <= 'Z' {
+		if i > 0 && v >= 'A' && v <= 'Z' {
 			result += "_"
 		}
-		result= result + string(v)
+		result = result + string(v)
 	}
 	return result
 }
